@@ -1,3 +1,3 @@
 import "./style.css";
 
-document.body.append("hi");
+document.body.append("deploy script test");
