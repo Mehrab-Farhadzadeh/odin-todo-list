@@ -1,9 +1,10 @@
 import TodoItem from "./TodoItem";
 
-export default (title) => {
+export default (id, title) => {
    const items = [];
+   let lastItemId = 0;
    function addItem(title, desc, dueDate, priority) {
-      items.push(TodoItem(title, desc, dueDate, priority));
+      items.push(TodoItem(lastItemId++, title, desc, dueDate, priority));
    }
 
    function deleteItem(index) {
@@ -14,5 +15,13 @@ export default (title) => {
       this.isChecked = !this.isChecked;
    }
 
-   return { title, items, isChecked: false, toggleCheck, addItem, deleteItem };
+   return {
+      id,
+      title,
+      items,
+      isChecked: false,
+      toggleCheck,
+      addItem,
+      deleteItem,
+   };
 };

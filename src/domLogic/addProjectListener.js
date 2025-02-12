@@ -7,7 +7,7 @@ export default function (AppLogic) {
       e.preventDefault();
       const input = document.querySelector("#project");
       AppLogic.addProject(input.value);
-      displayProjects(AppLogic.projects);
+      displayProjects(AppLogic.projects, AppLogic.getSelectedProjectId());
       e.target.reset();
    });
 }
