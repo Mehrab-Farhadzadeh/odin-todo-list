@@ -4,6 +4,7 @@ export default function (todoList) {
    for (const todoItem of todoList) {
       const newLi = document.createElement("li");
       newLi.classList.add("todo-item");
+      newLi.setAttribute("data-id", todoItem.id);
       newLi.textContent = todoItem.title;
       ul.append(newLi);
    }

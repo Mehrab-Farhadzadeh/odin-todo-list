@@ -4,6 +4,7 @@ export default function (projects, selectedProjectId) {
    for (const project of projects) {
       const newLi = document.createElement("li");
       newLi.className = "project";
+      newLi.setAttribute("data-id", project.id);
       if (project.id === selectedProjectId) {
          newLi.classList.add("selected");
          const todoListTitle = document.querySelector(".main .project-name");
