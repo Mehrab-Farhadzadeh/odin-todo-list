@@ -92,3 +92,8 @@ body {
 .selected {
    background-color: #ffffff33;
 }
+
+li:hover {
+   background-color: #ffffff11;
+   cursor: pointer;
+}
