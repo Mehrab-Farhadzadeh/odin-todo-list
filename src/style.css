@@ -92,7 +92,9 @@ body {
 .selected {
    background-color: #ffffff33;
 }
-
+.selected:hover {
+   background-color: #ffffff22;
+}
 li:hover {
    background-color: #ffffff11;
    cursor: pointer;
