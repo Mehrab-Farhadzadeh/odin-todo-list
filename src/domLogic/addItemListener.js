@@ -5,9 +5,11 @@ export default function (AppLogic) {
 
    form.addEventListener("submit", (e) => {
       e.preventDefault();
+      const selectedProject =
+         AppLogic.projects[AppLogic.getSelectedProjectId()];
       const input = document.querySelector("#todoItem");
-      AppLogic.projects[0].addItem(input.value);
-      displayTodoList(AppLogic.projects[0].items);
+      selectedProject.addItem(input.value);
+      displayTodoList(selectedProject.items);
       e.target.reset();
    });
 }
