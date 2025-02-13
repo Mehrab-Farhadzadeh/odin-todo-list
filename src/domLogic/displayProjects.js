@@ -1,16 +1,15 @@
-export default function (projects, selectedProjectId) {
+export default function (AppLogic) {
    const ul = document.querySelector("ul.projects");
    ul.innerHTML = "";
-   for (const project of projects) {
+   for (const project of AppLogic.projects) {
       const newLi = document.createElement("li");
       newLi.className = "project";
       newLi.setAttribute("data-id", project.id);
-      if (project.id === selectedProjectId) {
-         newLi.classList.add("selected");
-         const todoListTitle = document.querySelector(".main .project-name");
-         todoListTitle.textContent = project.title;
-      }
       newLi.textContent = project.title;
       ul.append(newLi);
    }
+   if (AppLogic.getSelectedProject())
+      document
+         .querySelector(`[data-id=\"${AppLogic.getSelectedProject().id}\"`)
+         .classList.add("selected");
 }

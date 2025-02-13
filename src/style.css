@@ -89,12 +89,18 @@ body {
    min-height: 100vh;
 }
 
+.project-name.empty {
+   background-color: darkred;
+}
+
 .selected {
    background-color: #ffffff33;
 }
+
 .selected:hover {
    background-color: #ffffff22;
 }
+
 li:hover {
    background-color: #ffffff11;
    cursor: pointer;

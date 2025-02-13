@@ -8,9 +8,8 @@ export default function (AppLogic) {
       e.preventDefault();
       const input = document.querySelector("#project");
       AppLogic.addProject(input.value);
-      const selectedProjectId = AppLogic.getSelectedProjectId();
-      displayProjects(AppLogic.projects, selectedProjectId);
-      displayTodoList(AppLogic.projects[selectedProjectId].items);
+      displayProjects(AppLogic);
+      displayTodoList(AppLogic);
       e.target.reset();
    });
 }

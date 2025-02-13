@@ -1,28 +1,27 @@
 import Project from "./Project";
-import TodoItem from "./TodoItem";
 
 export default (function () {
    const projects = [];
-   let lastProjectId = 0;
+   let lastProjectId = -1;
    let selectedProjectId;
 
    function addProject(title) {
-      projects.push(Project(lastProjectId++, title));
-      setSelectedProjectId(lastProjectId - 1);
+      projects.push(Project(++lastProjectId, title));
+      setSelectedProjectId(lastProjectId);
    }
 
    function setSelectedProjectId(id) {
       selectedProjectId = id;
    }
 
-   function getSelectedProjectId() {
-      return selectedProjectId;
+   function getSelectedProject() {
+      return projects.find((project) => project.id === selectedProjectId);
    }
 
    return {
       projects,
       addProject,
       setSelectedProjectId,
-      getSelectedProjectId,
+      getSelectedProject,
    };
 })();

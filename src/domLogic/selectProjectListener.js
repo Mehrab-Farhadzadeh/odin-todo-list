@@ -7,7 +7,7 @@ export default function (AppLogic) {
    ul.addEventListener("click", (e) => {
       const selectedProjectId = +e.target.dataset.id;
       AppLogic.setSelectedProjectId(selectedProjectId);
-      displayProjects(AppLogic.projects, selectedProjectId);
-      displayTodoList(AppLogic.projects[selectedProjectId].items);
+      displayProjects(AppLogic);
+      displayTodoList(AppLogic);
    });
 }
