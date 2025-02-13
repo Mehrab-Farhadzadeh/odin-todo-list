@@ -10,6 +10,14 @@ export default (function () {
       setSelectedProjectId(lastProjectId);
    }
 
+   function removeProject(projectId) {
+      if (projectId === selectedProjectId) selectedProjectId = undefined;
+      const projectIdx = projects.findIndex(
+         (project) => project.id === projectId
+      );
+      projects.splice(projectIdx, 1);
+   }
+
    function setSelectedProjectId(id) {
       selectedProjectId = id;
    }
@@ -21,6 +29,7 @@ export default (function () {
    return {
       projects,
       addProject,
+      removeProject,
       setSelectedProjectId,
       getSelectedProject,
    };
