@@ -2,13 +2,19 @@ import TodoItem from "./TodoItem";
 
 export default (id, title) => {
    const items = [];
-   let lastItemId = 0;
+   let lastItemId = -1;
+   let selectedItemId;
+
    function addItem(title, desc, dueDate, priority) {
-      items.push(TodoItem(lastItemId++, title, desc, dueDate, priority));
+      items.push(TodoItem(++lastItemId, title, desc, dueDate, priority));
    }
 
-   function deleteItem(index) {
-      items.splice(index, 1);
+   function setSelectedItemId(id) {
+      selectedItemId = id;
+   }
+
+   function getSelectedItem() {
+      return items.find((item) => item.id === selectedItemId);
    }
 
    function toggleCheck() {
@@ -22,6 +28,7 @@ export default (id, title) => {
       isChecked: false,
       toggleCheck,
       addItem,
-      deleteItem,
+      setSelectedItemId,
+      getSelectedItem,
    };
 };

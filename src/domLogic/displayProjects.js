@@ -18,6 +18,6 @@ export default function (AppLogic) {
    }
    if (AppLogic.getSelectedProject())
       document
-         .querySelector(`[data-id=\"${AppLogic.getSelectedProject().id}\"`)
+         .querySelector(`.project[data-id=\"${AppLogic.getSelectedProject().id}\"`)
          .classList.add("selected");
 }
