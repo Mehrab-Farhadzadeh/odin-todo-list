@@ -5,10 +5,14 @@ export default function (AppLogic) {
    const ul = document.querySelector("ul.todo-list");
 
    ul.addEventListener("click", (e) => {
+      let selectedItemId;
       if (e.target.classList.contains("todo-item")) {
-         const selectedItemId = +e.target.dataset.id;
-         AppLogic.getSelectedProject().setSelectedItemId(selectedItemId);
+         selectedItemId = +e.target.dataset.id;
       }
+      if (e.target.parentNode.classList.contains("todo-item")) {
+         selectedItemId = +e.target.parentNode.dataset.id;
+      }
+      AppLogic.getSelectedProject().setSelectedItemId(selectedItemId);
       displayProjects(AppLogic);
       displayTodoList(AppLogic);
    });
