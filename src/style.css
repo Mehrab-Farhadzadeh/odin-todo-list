@@ -70,6 +70,30 @@ h6 {
 /*********************************/
 /*********************************/
 
+:root {
+   --project-name-empty-bg-color: darkred;
+
+   --project-bg-color: transparent;
+   --project-hover-bg-color: #ffffff11;
+   --project-selected-bg-color: #ffffff22;
+   --project-selected-hover-bg-color: #ffffff33;
+
+   --low-priority-bg-color: rgb(25, 62, 18, 0.5);
+   --low-priority-hover-bg-color: rgb(25, 62, 18, 0.65);
+   --low-priority-selected-bg-color: rgb(25, 62, 18, 0.85);
+   --low-priority-selected-hover-bg-color: rgb(25, 62, 18, 1);
+
+   --medium-priority-bg-color: rgb(62, 59, 18, 0.5);
+   --medium-priority-hover-bg-color: rgb(62, 59, 18, .65);
+   --medium-priority-selected-bg-color: rgb(62, 59, 18, 0.85);
+   --medium-priority-selected-hover-bg-color: rgb(62, 59, 18, 1);
+
+   --high-priority-bg-color: rgb(62, 18, 18, 0.5);
+   --high-priority-hover-bg-color: rgb(62, 18, 18, .65);
+   --high-priority-selected-bg-color: rgb(62, 18, 18, 0.85);
+   --high-priority-selected-hover-bg-color: rgb(62, 18, 18, 1);
+}
+
 body {
    background-color: #1f1f1f;
    color: #eee;
@@ -83,6 +107,24 @@ body {
    border-right: 1px solid;
 }
 
+.project {
+   padding: 12px;
+   background-color: var(--project-bg-color);
+}
+
+.project:hover {
+   background-color: var(--project-hover-bg-color);
+}
+
+.project.selected {
+   background-color: var(--project-selected-bg-color);
+}
+
+.project.selected:hover {
+   background-color: var(--project-selected-hover-bg-color);
+}
+
+
 .main {
    padding: 2em;
    padding-top: 4em;
@@ -90,18 +132,66 @@ body {
 }
 
 .project-name.empty {
-   background-color: darkred;
+   background-color: var(--project-name-empty-bg-color);
 }
 
-.selected {
-   background-color: #ffffff33;
+li.todo-item {
+   padding: 8px;
 }
 
-.selected:hover {
-   background-color: #ffffff22;
+.todo-item.low {
+   background-color: var(--low-priority-bg-color);
+}
+
+.todo-item.low:hover {
+   background-color: var(--low-priority-hover-bg-color);
+}
+
+.todo-item.low.selected {
+   background-color: var(--low-priority-selected-bg-color);
+}
+
+.todo-item.low.selected:hover {
+   background-color: var(--low-priority-selected-hover-bg-color);
+}
+
+.todo-item.medium {
+   background-color: var(--medium-priority-bg-color);
+}
+
+.todo-item.medium:hover {
+   background-color: var(--medium-priority-hover-bg-color);
+}
+
+.todo-item.medium.selected {
+   background-color: var(--medium-priority-selected-bg-color);
+}
+
+.todo-item.medium.selected:hover {
+   background-color: var(--medium-priority-selected-hover-bg-color);
+}
+
+.todo-item.high {
+   background-color: var(--high-priority-bg-color);
+}
+
+.todo-item.high:hover {
+   background-color: var(--high-priority-hover-bg-color);
+}
+
+.todo-item.high.selected {
+   background-color: var(--high-priority-selected-bg-color);
+}
+
+.todo-item.high.selected:hover {
+   background-color: var(--high-priority-selected-hover-bg-color);
 }
 
 li:hover {
-   background-color: #ffffff11;
    cursor: pointer;
+}
+
+li {
+   display: flex;
+   justify-content: space-between;
 }
