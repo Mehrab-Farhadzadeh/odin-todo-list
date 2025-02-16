@@ -23,6 +23,14 @@ function createTodoItem(item) {
    return newLi;
 }
 
+function expandSelectedItemd(selectedItemEl, selectedItem) {
+   // desc
+   const dueDateDiv = document.createElement("div");
+   dueDateDiv.textContent = selectedItem.desc;
+   dueDateDiv.classList.add("desc");
+   selectedItemEl.appendChild(dueDateDiv);
+}
+
 export default function (AppLogic) {
    const selectedProject = AppLogic.getSelectedProject();
    const ul = document.querySelector("ul.todo-list");
@@ -43,8 +51,11 @@ export default function (AppLogic) {
    }
    // Add seleceted class
    const selectedItem = AppLogic.getSelectedProject().getSelectedItem();
-   if (selectedItem)
-      document
-         .querySelector(`.todo-item[data-id=\"${selectedItem.id}\"`)
-         .classList.add("selected");
+   if (selectedItem) {
+      const selcetedItemEl = document.querySelector(
+         `.todo-item[data-id=\"${selectedItem.id}\"`
+      );
+      selcetedItemEl.classList.add("selected");
+      expandSelectedItemd(selcetedItemEl, selectedItem);
+   }
 }
