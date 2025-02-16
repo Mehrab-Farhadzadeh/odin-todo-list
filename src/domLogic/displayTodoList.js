@@ -20,6 +20,12 @@ function createTodoItem(item) {
    // proiority
    newLi.classList.add(item.priority.toLowerCase());
 
+   // remove btn
+   const removeBtn = document.createElement("button");
+   removeBtn.classList.add("remove-btn");
+   removeBtn.textContent = "🗑️";
+   newLi.append(removeBtn);
+
    return newLi;
 }
 

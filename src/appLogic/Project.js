@@ -9,6 +9,12 @@ export default (id, title) => {
       items.push(TodoItem(++lastItemId, title, desc, dueDate, priority));
    }
 
+   function removeItem(itemId) {
+      if (itemId === selectedItemId) selectedItemId = undefined;
+      const itemIdx = items.findIndex((item) => item.id === itemId);
+      items.splice(itemIdx, 1);
+   }
+
    function setSelectedItemId(id) {
       selectedItemId = id;
    }
@@ -28,6 +34,7 @@ export default (id, title) => {
       isChecked: false,
       toggleCheck,
       addItem,
+      removeItem,
       setSelectedItemId,
       getSelectedItem,
    };

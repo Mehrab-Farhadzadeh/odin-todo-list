@@ -12,6 +12,10 @@ export default function (AppLogic) {
       if (e.target.parentNode.classList.contains("todo-item")) {
          selectedItemId = +e.target.parentNode.dataset.id;
       }
+      if (e.target.classList.contains("remove-btn")) {
+         AppLogic.getSelectedProject().removeItem(selectedItemId);
+      }
+
       AppLogic.getSelectedProject().setSelectedItemId(selectedItemId);
       displayProjects(AppLogic);
       displayTodoList(AppLogic);
