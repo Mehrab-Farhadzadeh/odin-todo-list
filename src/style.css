@@ -126,11 +126,27 @@ body {
    background-color: var(--project-selected-hover-bg-color);
 }
 
+#projectForm {
+   margin-top: 1em;
+   padding: 0 12px;
+   display: flex;
+   gap: 4px;
+}
+
+#project {
+   flex: 1;
+}
 
 .main {
    padding: 2em;
    padding-top: 4em;
    min-height: 100vh;
+}
+
+#todoItemForm {
+   display: flex;
+   width: 500px;
+   flex-wrap: wrap;
 }
 
 .project-name.empty {

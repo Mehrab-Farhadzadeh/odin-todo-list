@@ -13,7 +13,7 @@
       <h1>Projects</h1>
       <ul class="projects"> </ul>
       <form action="" id="projectForm">
-         <input type="text" name="project" id="project" required>
+         <input type="text" name="projectTitle" id="projectTitle" required>
          <button>Add</button>
       </form>
    </div>
@@ -22,7 +22,14 @@
       <h1 class="project-name">Project</h1>
       <ul class="todo-list"> </ul>
       <form action="" id="todoItemForm">
-         <input type="text" name="todoItem" id="todoItem" required>
+         <input type="text" name="todoItemTitle" id="todoItemTitle" required>
+         <input type="date" name="todoItemDueDate" id="todoItemDueDate" required>
+         <select name="todoItemPriority" id="todoItemPriority">
+            <option value="low">Low</option>
+            <option value="medium" selected>Medium</option>
+            <option value="high">High</option>
+         </select>
+         <textarea name="todoItemDesc" id="todoItemDesc"></textarea>
          <button>Add</button>
       </form>
 

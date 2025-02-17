@@ -6,7 +6,7 @@ export default function (AppLogic) {
 
    form.addEventListener("submit", (e) => {
       e.preventDefault();
-      const input = document.querySelector("#project");
+      const input = document.querySelector("#projectTitle");
       AppLogic.addProject(input.value);
       displayProjects(AppLogic);
       displayTodoList(AppLogic);
