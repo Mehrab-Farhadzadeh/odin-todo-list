@@ -23,8 +23,8 @@ export default (id, title) => {
       return items.find((item) => item.id === selectedItemId);
    }
 
-   function toggleCheck() {
-      this.isChecked = !this.isChecked;
+   function toggleCheck(selectedItemId) {
+      items.find((item) => item.id === selectedItemId).toggleCheck();
    }
 
    return {

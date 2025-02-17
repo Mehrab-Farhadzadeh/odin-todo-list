@@ -20,6 +20,16 @@ function createTodoItem(item) {
    // proiority
    newLi.classList.add(item.priority.toLowerCase());
 
+   // checked state
+   const checkboxDiv = document.createElement("div");
+   checkboxDiv.classList.add("checkbox");
+   const checkboxInput = document.createElement("input");
+   checkboxInput.type = "checkbox";
+   checkboxInput.name = "isChecked";
+   checkboxInput.checked = item.isChecked;
+   checkboxDiv.appendChild(checkboxInput);
+   newLi.prepend(checkboxInput);
+
    // remove btn
    const removeBtn = document.createElement("button");
    removeBtn.classList.add("remove-btn");

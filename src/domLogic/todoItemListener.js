@@ -15,7 +15,12 @@ export default function (AppLogic) {
       if (e.target.classList.contains("remove-btn")) {
          AppLogic.getSelectedProject().removeItem(selectedItemId);
       }
-
+      if (e.target.name === "isChecked") {
+         AppLogic.getSelectedProject().toggleCheck(selectedItemId);
+         const selectedItem = AppLogic.getSelectedProject().getSelectedItem();
+         if (selectedItem) selectedItemId = selectedItem.id;
+         else selectedItemId = -1;
+      }
       AppLogic.getSelectedProject().setSelectedItemId(selectedItemId);
       displayProjects(AppLogic);
       displayTodoList(AppLogic);

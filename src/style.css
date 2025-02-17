@@ -108,6 +108,8 @@ body {
 }
 
 .project {
+   display: flex;
+   justify-content: space-between;
    padding: 12px;
    background-color: var(--project-bg-color);
 }
@@ -135,8 +137,23 @@ body {
    background-color: var(--project-name-empty-bg-color);
 }
 
-li.todo-item {
+.todo-item {
+   width: 500px;
    padding: 8px;
+   display: flex;
+   justify-content: start;
+   flex-wrap: wrap;
+   gap: 1rem;
+}
+
+.todo-item .title {
+   width: 300px;
+   flex: 1 0 auto;
+}
+
+.todo-item .checkbox,
+.todo-item .remove-btn {
+   width: unset;
 }
 
 .todo-item.low {
@@ -189,9 +206,4 @@ li.todo-item {
 
 li:hover {
    cursor: pointer;
-}
-
-li {
-   display: flex;
-   justify-content: space-between;
 }
