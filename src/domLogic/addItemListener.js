@@ -8,6 +8,7 @@ export default function (AppLogic) {
       const title = document.querySelector("#todoItemTitle");
       const dueDate = document.querySelector("#todoItemDueDate");
       const desc = document.querySelector("#todoItemDesc");
+      const priority = document.querySelector("#todoItemPriority");
       if (!AppLogic.getSelectedProject()) {
          alert("Please select or create a project first");
          return;
@@ -15,7 +16,8 @@ export default function (AppLogic) {
       AppLogic.getSelectedProject().addItem(
          title.value,
          desc.value,
-         dueDate.valueAsDate
+         dueDate.valueAsDate,
+         priority.value
       );
       displayTodoList(AppLogic);
       e.target.reset();
