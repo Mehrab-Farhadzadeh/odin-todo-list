@@ -3,11 +3,16 @@ export default function (
    title,
    desc,
    dueDate = new Date(),
-   priority = "Medium"
+   priority = "Medium",
+   checkedState = false
 ) {
-   function toggleCheck() {
-      this.isChecked = !this.isChecked;
+   const toggleCheck = () => {
+      checkedState = !checkedState;
+   };
+
+   function isChecked() {
+      return checkedState;
    }
 
-   return { id, title, desc, dueDate, priority, isChecked: false, toggleCheck };
+   return { id, title, desc, dueDate, priority, isChecked, toggleCheck };
 }

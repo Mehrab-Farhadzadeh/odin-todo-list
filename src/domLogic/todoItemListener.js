@@ -15,7 +15,7 @@ export default function (AppLogic) {
       if (e.target.classList.contains("remove-btn")) {
          AppLogic.getSelectedProject().removeItem(selectedItemId);
       }
-      if (e.target.name === "isChecked") {
+      if (e.target.name === "checkedState") {
          AppLogic.getSelectedProject().toggleCheck(selectedItemId);
          const selectedItem = AppLogic.getSelectedProject().getSelectedItem();
          if (selectedItem) selectedItemId = selectedItem.id;

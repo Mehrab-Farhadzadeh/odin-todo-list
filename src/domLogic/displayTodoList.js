@@ -25,8 +25,8 @@ function createTodoItem(item) {
    checkboxDiv.classList.add("checkbox");
    const checkboxInput = document.createElement("input");
    checkboxInput.type = "checkbox";
-   checkboxInput.name = "isChecked";
-   checkboxInput.checked = item.isChecked;
+   checkboxInput.name = "checkedState";
+   checkboxInput.checked = item.isChecked();
    checkboxDiv.appendChild(checkboxInput);
    newLi.prepend(checkboxInput);
 
