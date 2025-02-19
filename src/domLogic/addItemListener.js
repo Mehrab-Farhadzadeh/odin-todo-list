@@ -2,11 +2,12 @@ import displayTodoList from "./displayTodoList";
 
 export default function (AppLogic) {
    const form = document.querySelector("form#todoItemForm");
+   const dueDate = document.querySelector("#todoItemDueDate");
+   dueDate.valueAsDate = new Date();
 
    form.addEventListener("submit", (e) => {
       e.preventDefault();
       const title = document.querySelector("#todoItemTitle");
-      const dueDate = document.querySelector("#todoItemDueDate");
       const desc = document.querySelector("#todoItemDesc");
       const priority = document.querySelector("#todoItemPriority");
       if (!AppLogic.getSelectedProject()) {
@@ -20,6 +21,7 @@ export default function (AppLogic) {
          priority.value
       );
       displayTodoList(AppLogic);
-      e.target.reset();
+      title.value = "";
+      desc.value = "";
    });
 }
