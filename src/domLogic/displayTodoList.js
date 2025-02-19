@@ -45,6 +45,12 @@ function expandSelectedItemd(selectedItemEl, selectedItem) {
    dueDateDiv.textContent = selectedItem.desc;
    dueDateDiv.classList.add("desc");
    selectedItemEl.appendChild(dueDateDiv);
+
+   // Edit
+   const editBtn = document.createElement("button");
+   editBtn.classList.add("edit-btn");
+   editBtn.textContent = "✏️";
+   selectedItemEl.append(editBtn);
 }
 
 export default function (AppLogic) {

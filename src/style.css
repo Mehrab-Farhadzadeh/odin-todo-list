@@ -182,6 +182,10 @@ body {
    width: unset;
 }
 
+.todo-item .edit-btn {
+   margin-left: auto;
+}
+
 .todo-item.low {
    background-color: var(--low-priority-bg-color);
 }
@@ -228,6 +232,14 @@ body {
 
 .todo-item.high.selected:hover {
    background-color: var(--high-priority-selected-hover-bg-color);
+}
+
+#editTodoItem {
+   justify-content: center;
+   width: 500px;
+   flex-wrap: wrap;
+   margin: auto;
+   padding: 1em 2em;
 }
 
 li:hover {

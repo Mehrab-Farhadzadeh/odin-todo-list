@@ -15,6 +15,16 @@ export default (id, title) => {
       items.splice(itemIdx, 1);
    }
 
+   function editItem(title, desc, dueDate, priority) {
+      const item = getSelectedItem();
+      if (item) {
+         item.title = title;
+         item.desc = desc;
+         item.dueDate = dueDate;
+         item.priority = priority;
+      }
+   }
+
    function setSelectedItemId(id) {
       selectedItemId = id;
    }
@@ -35,6 +45,7 @@ export default (id, title) => {
       toggleCheck,
       addItem,
       removeItem,
+      editItem,
       setSelectedItemId,
       getSelectedItem,
    };

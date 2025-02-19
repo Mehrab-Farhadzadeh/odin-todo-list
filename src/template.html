@@ -43,6 +43,23 @@
          <button>Add</button>
       </form>
 
+      <dialog id="editTodoItem">
+         <form action="" id="editTodoItemForm">
+            <input type="text" name="editTodoItemTitle" id="editTodoItemTitle" required>
+            <input type="date" name="editTodoItemDueDate" id="editTodoItemDueDate" required>
+            <select name="editTodoItemPriority" id="editTodoItemPriority">
+               <option value="low">Low</option>
+               <option value="medium" selected>Medium</option>
+               <option value="high">High</option>
+            </select>
+            <textarea name="editTodoItemDesc" id="editTodoItemDesc"></textarea>
+            <div>
+               <button class="confirm-btn" value="default">Confirm</button>
+               <button value="cancel" formmethod="dialog" formnovalidate>Cancel</button>
+            </div>
+         </form>
+      </dialog>
+
    </div>
 </body>
 
