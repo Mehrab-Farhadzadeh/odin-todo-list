@@ -17,7 +17,7 @@ function createTodoItem(item) {
    dueDateDiv.classList.add("due-date");
    newLi.appendChild(dueDateDiv);
 
-   // proiority
+   // priority
    newLi.classList.add(item.priority.toLowerCase());
 
    // checked state
@@ -39,7 +39,7 @@ function createTodoItem(item) {
    return newLi;
 }
 
-function expandSelectedItemd(selectedItemEl, selectedItem) {
+function expandSelectedItem(selectedItemEl, selectedItem) {
    // desc
    const dueDateDiv = document.createElement("div");
    dueDateDiv.textContent = selectedItem.desc;
@@ -61,7 +61,7 @@ export default function (AppLogic) {
    // Check if no project is selected
    if (!selectedProject) {
       todoListTitle.classList.add("empty");
-      todoListTitle.textContent = "No project is selceted...";
+      todoListTitle.textContent = "No project is selected...";
       return;
    }
    // Display project title
@@ -71,13 +71,13 @@ export default function (AppLogic) {
    for (const todoItem of selectedProject.items) {
       ul.append(createTodoItem(todoItem));
    }
-   // Add seleceted class
+   // Add selected class
    const selectedItem = AppLogic.getSelectedProject().getSelectedItem();
    if (selectedItem) {
-      const selcetedItemEl = document.querySelector(
+      const selectedItemEl = document.querySelector(
          `.todo-item[data-id=\"${selectedItem.id}\"`
       );
-      selcetedItemEl.classList.add("selected");
-      expandSelectedItemd(selcetedItemEl, selectedItem);
+      selectedItemEl.classList.add("selected");
+      expandSelectedItem(selectedItemEl, selectedItem);
    }
 }
