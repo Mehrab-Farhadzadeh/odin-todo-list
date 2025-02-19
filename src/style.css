@@ -109,7 +109,7 @@ body {
 
 .project {
    display: flex;
-   justify-content: space-between;
+   gap: 12px;
    padding: 12px;
    background-color: var(--project-bg-color);
 }
@@ -126,6 +126,10 @@ body {
    background-color: var(--project-selected-hover-bg-color);
 }
 
+.project .edit-btn {
+   margin-left: auto;
+}
+
 #projectForm {
    margin-top: 1em;
    padding: 0 12px;
@@ -135,6 +139,12 @@ body {
 
 #project {
    flex: 1;
+}
+
+#editProject {
+   justify-content: center;
+   margin: auto;
+   padding: 1em 2em;
 }
 
 .main {

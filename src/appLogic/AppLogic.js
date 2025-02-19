@@ -18,6 +18,11 @@ export default (function () {
       projects.splice(projectIdx, 1);
    }
 
+   function editProject(projectId, title) {
+      const project = projects.find((project) => project.id === projectId);
+      if (project && title) project.title = title;
+   }
+
    function setSelectedProjectId(id) {
       selectedProjectId = id;
    }
@@ -30,6 +35,7 @@ export default (function () {
       projects,
       addProject,
       removeProject,
+      editProject,
       setSelectedProjectId,
       getSelectedProject,
    };

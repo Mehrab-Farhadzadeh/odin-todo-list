@@ -5,6 +5,13 @@ function appendRemoveButton(li) {
    li.append(removeBtn);
 }
 
+function appendEditButton(li) {
+   const editBtn = document.createElement("button");
+   editBtn.classList.add("edit-btn");
+   editBtn.textContent = "✏️";
+   li.append(editBtn);
+}
+
 export default function (AppLogic) {
    const ul = document.querySelector("ul.projects");
    ul.innerHTML = "";
@@ -13,11 +20,14 @@ export default function (AppLogic) {
       newLi.className = "project";
       newLi.setAttribute("data-id", project.id);
       newLi.textContent = project.title;
+      appendEditButton(newLi);
       appendRemoveButton(newLi);
       ul.append(newLi);
    }
    if (AppLogic.getSelectedProject())
       document
-         .querySelector(`.project[data-id=\"${AppLogic.getSelectedProject().id}\"`)
+         .querySelector(
+            `.project[data-id=\"${AppLogic.getSelectedProject().id}\"`
+         )
          .classList.add("selected");
 }

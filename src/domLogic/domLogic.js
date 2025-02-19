@@ -5,6 +5,7 @@ import addItemListener from "./addItemListener";
 import selectProjectListener from "./selectProjectListener";
 import removeProjectListener from "./removeProjectListener";
 import todoItemListener from "./todoItemListener";
+import editProjectListener from "./editProjectListener";
 
 export default function (AppLogic) {
    displayProjects(AppLogic);
@@ -14,4 +15,5 @@ export default function (AppLogic) {
    selectProjectListener(AppLogic);
    removeProjectListener(AppLogic);
    todoItemListener(AppLogic);
+   editProjectListener(AppLogic);
 }
