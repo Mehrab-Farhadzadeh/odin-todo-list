@@ -5,8 +5,10 @@ export default (id, title) => {
    let lastItemId = -1;
    let selectedItemId;
 
-   function addItem(title, desc, dueDate, priority) {
-      items.push(TodoItem(++lastItemId, title, desc, dueDate, priority));
+   function addItem(title, desc, dueDate, priority, checkedState) {
+      items.push(
+         TodoItem(++lastItemId, title, desc, dueDate, priority, checkedState)
+      );
    }
 
    function removeItem(itemId) {

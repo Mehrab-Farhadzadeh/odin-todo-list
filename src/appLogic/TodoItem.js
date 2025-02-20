@@ -6,13 +6,22 @@ export default function (
    priority = "Medium",
    checkedState = false
 ) {
-   const toggleCheck = () => {
-      checkedState = !checkedState;
-   };
-
-   function isChecked() {
-      return checkedState;
+   function toggleCheck() {
+      this.checkedState = !this.checkedState;
    }
 
-   return { id, title, desc, dueDate, priority, isChecked, toggleCheck };
+   function isChecked() {
+      return this.checkedState;
+   }
+
+   return {
+      id,
+      title,
+      desc,
+      dueDate,
+      priority,
+      checkedState,
+      isChecked,
+      toggleCheck,
+   };
 }
