@@ -12,7 +12,8 @@
    <div class="sidebar">
       <h1>Projects</h1>
       <ul class="projects"> </ul>
-      <form action="" id="projectForm">
+      <button class="showAddProjectForm">➕</button>
+      <form action="" id="projectForm" class="hidden">
          <input type="text" name="projectTitle" id="projectTitle" required>
          <button>Add</button>
       </form>
@@ -31,7 +32,8 @@
    <div class="main">
       <h1 class="project-name">Project</h1>
       <ul class="todo-list"> </ul>
-      <form action="" id="todoItemForm">
+      <button class="showAddTodoItemForm">➕</button>
+      <form action="" id="todoItemForm" class="hidden">
          <input type="text" name="todoItemTitle" id="todoItemTitle" required>
          <input type="date" name="todoItemDueDate" id="todoItemDueDate" required>
          <select name="todoItemPriority" id="todoItemPriority">

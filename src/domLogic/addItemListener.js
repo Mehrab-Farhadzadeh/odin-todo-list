@@ -1,7 +1,15 @@
 import displayTodoList from "./displayTodoList";
 
+function showAddTodoItemBtnListener(form) {
+   const btn = document.querySelector(".showAddTodoItemForm");
+   btn.addEventListener("click", () => {
+      form.classList.toggle("hidden");
+   });
+}
+
 export default function (AppLogic) {
    const form = document.querySelector("form#todoItemForm");
+   showAddTodoItemBtnListener(form);
    const dueDate = document.querySelector("#todoItemDueDate");
    dueDate.valueAsDate = new Date();
 

@@ -137,7 +137,11 @@ body {
    gap: 4px;
 }
 
-#project {
+#projectForm.hidden {
+   display: none;
+}
+
+#projectTitle {
    flex: 1;
 }
 
@@ -157,6 +161,10 @@ body {
    display: flex;
    width: 500px;
    flex-wrap: wrap;
+}
+
+#todoItemForm.hidden {
+   display: none;
 }
 
 .project-name.empty {
