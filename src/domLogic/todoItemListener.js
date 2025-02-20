@@ -2,10 +2,21 @@ import displayProjects from "./displayProjects";
 import displayTodoList from "./displayTodoList";
 import editTodoItemDialogListener from "./editTodoItemDialogListener";
 
+function deselectTodoItem(AppLogic) {
+   const main = document.querySelector(".main");
+   main.addEventListener("click", (e) => {
+      if (e.target.classList.contains("main")) {
+         AppLogic.getSelectedProject().setSelectedItemId(-1);
+         displayTodoList(AppLogic);
+      }
+   });
+}
+
 export default function (AppLogic) {
    const ul = document.querySelector("ul.todo-list");
 
    editTodoItemDialogListener(AppLogic);
+   deselectTodoItem(AppLogic);
 
    ul.addEventListener("click", (e) => {
       let selectedItemId;
