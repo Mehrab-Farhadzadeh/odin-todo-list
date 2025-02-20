@@ -92,6 +92,8 @@ h6 {
    --high-priority-hover-bg-color: rgb(62, 18, 18, .65);
    --high-priority-selected-bg-color: rgb(62, 18, 18, 0.85);
    --high-priority-selected-hover-bg-color: rgb(62, 18, 18, 1);
+
+   --todo-list-width: 60vw;
 }
 
 body {
@@ -99,16 +101,26 @@ body {
    color: #eee;
    display: grid;
    grid-template-columns: 1fr 3fr;
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .sidebar {
    padding: 1em;
    min-height: 100vh;
-   border-right: 1px solid;
+   border-right: 4px solid #ffffff11;
+}
+
+.projects {
+   margin-top: 1em;
+   display: flex;
+   flex-direction: column;
+   gap: 4px;
 }
 
 .project {
    display: flex;
+   align-items: center;
+   border-radius: 4px;
    gap: 12px;
    padding: 12px;
    background-color: var(--project-bg-color);
@@ -152,6 +164,7 @@ body {
 }
 
 .main {
+   width: var(--todo-list-width);
    padding: 2em;
    padding-top: 4em;
    min-height: 100vh;
@@ -167,17 +180,33 @@ body {
    display: none;
 }
 
+.todo-list-header {
+   display: flex;
+}
+
+.showAddTodoListForm {
+   margin-left: auto;
+}
+
 .project-name.empty {
    background-color: var(--project-name-empty-bg-color);
 }
 
+.todo-list {
+   margin-top: 1em;
+   display: flex;
+   flex-direction: column;
+   gap: 4px;
+}
+
 .todo-item {
-   width: 500px;
    padding: 8px;
    display: flex;
    justify-content: start;
+   align-items: center;
    flex-wrap: wrap;
    gap: 1rem;
+   border-radius: 4px;
 }
 
 .todo-item .title {
@@ -252,4 +281,17 @@ body {
 
 li:hover {
    cursor: pointer;
+}
+
+button {
+   background-color: unset;
+   color: inherit;
+   border: unset;
+   border-radius: 4px;
+   cursor: pointer;
+   padding: 4px;
+}
+
+button:hover {
+   background-color: #ffffff11;
 }
