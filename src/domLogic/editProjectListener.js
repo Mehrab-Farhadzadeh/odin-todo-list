@@ -17,6 +17,7 @@ export default function (AppLogic) {
       if (!e.target.classList.contains("edit-btn")) return;
       projectId = +e.target.parentNode.dataset.id;
       dialog.showModal();
+      input.value = AppLogic.getSelectedProjectById(projectId).title;
    });
 
    dialog.addEventListener("close", (e) => {

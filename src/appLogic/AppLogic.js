@@ -35,6 +35,10 @@ export default (function () {
       return projects.find((project) => project.id === selectedProjectId);
    }
 
+   function getSelectedProjectById(projectId) {
+      return projects.find((project) => project.id === projectId);
+   }
+
    return {
       projects,
       addProject,
@@ -42,6 +46,7 @@ export default (function () {
       editProject,
       setSelectedProjectId,
       getSelectedProject,
+      getSelectedProjectById,
       updateLocalStorage,
    };
 })();
