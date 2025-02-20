@@ -40,18 +40,31 @@ export default function (AppLogic) {
          const dialog = document.querySelector("#editTodoItem");
          dialog.showModal();
 
+         const projectList = document.querySelector("#projectList");
          const dueDate = document.querySelector("#editTodoItemDueDate");
          const title = document.querySelector("#editTodoItemTitle");
          const desc = document.querySelector("#editTodoItemDesc");
          const priority = document.querySelector("#editTodoItemPriority");
 
+         //  Add the current selected Item info
          const selectedItem = AppLogic.getSelectedProject().getSelectedItem();
-
          if (selectedItem) {
             dueDate.valueAsDate = selectedItem.dueDate;
             title.value = selectedItem.title;
             desc.value = selectedItem.desc;
             priority.value = selectedItem.priority.toLowerCase();
+
+            // populate projectList
+            projectList.innerHTML = "";
+            const selectedProjectId = AppLogic.getSelectedProject().id;
+            for (const project of AppLogic.projects) {
+               const option = document.createElement("option");
+               option.value = project.title;
+               option.dataset.id = project.id;
+               option.textContent = project.title;
+               if (project.id === selectedProjectId) option.selected = true;
+               projectList.append(option);
+            }
          }
       }
 
