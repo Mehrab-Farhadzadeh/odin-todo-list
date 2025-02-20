@@ -13,7 +13,7 @@ function createTodoItem(item) {
 
    // dueDate
    const dueDateDiv = document.createElement("div");
-   dueDateDiv.textContent = format(item.dueDate, "dd-MMM-yyyy");
+   dueDateDiv.textContent = format(item.dueDate, "MMM dd, yyyy");
    dueDateDiv.classList.add("due-date");
    newLi.appendChild(dueDateDiv);
 
