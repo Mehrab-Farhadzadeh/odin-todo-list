@@ -13,6 +13,10 @@ function fetchFromLocalStorage(AppLogic) {
             );
          }
       }
+      const selectedProjectId = JSON.parse(
+         localStorage.getItem("selectedProjectId")
+      );
+      AppLogic.setSelectedProjectId(selectedProjectId);
    } else {
       // Default Project
       AppLogic.addProject("Groceries");

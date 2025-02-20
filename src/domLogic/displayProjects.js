@@ -25,10 +25,15 @@ export default function (AppLogic) {
       appendRemoveButton(newLi);
       ul.append(newLi);
    }
-   if (AppLogic.getSelectedProject())
+   if (AppLogic.getSelectedProject()) {
       document
          .querySelector(
             `.project[data-id=\"${AppLogic.getSelectedProject().id}\"`
          )
          .classList.add("selected");
+      localStorage.setItem(
+         "selectedProjectId",
+         AppLogic.getSelectedProject().id
+      );
+   }
 }
