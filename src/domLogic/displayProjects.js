@@ -13,6 +13,7 @@ function appendEditButton(li) {
 }
 
 export default function (AppLogic) {
+   AppLogic.updateLocalStorage();
    const ul = document.querySelector("ul.projects");
    ul.innerHTML = "";
    for (const project of AppLogic.projects) {

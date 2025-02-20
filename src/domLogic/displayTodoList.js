@@ -54,6 +54,7 @@ function expandSelectedItem(selectedItemEl, selectedItem) {
 }
 
 export default function (AppLogic) {
+   AppLogic.updateLocalStorage();
    const selectedProject = AppLogic.getSelectedProject();
    const ul = document.querySelector("ul.todo-list");
    ul.innerHTML = "";

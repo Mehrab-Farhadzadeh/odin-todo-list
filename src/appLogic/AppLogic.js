@@ -5,6 +5,10 @@ export default (function () {
    let lastProjectId = -1;
    let selectedProjectId;
 
+   function updateLocalStorage() {
+      localStorage.setItem("projects", JSON.stringify(projects));
+   }
+
    function addProject(title) {
       projects.push(Project(++lastProjectId, title));
       setSelectedProjectId(lastProjectId);
@@ -38,5 +42,6 @@ export default (function () {
       editProject,
       setSelectedProjectId,
       getSelectedProject,
+      updateLocalStorage,
    };
 })();
